@@ -62,7 +62,7 @@ end
 function ropost.publish(kwargs)
     local channel = kwargs.channel or DEFAULT_CHANNEL
     local topic,
-        data = kwargs.topic, kwargs.data
+        data = kwargs.topic, kwargs.data or {}
     assert(type(channel) == "string", "Invalid channel!")
     assert(type(topic) == "string", "Invalid topic!")
     assert(type(data) == "table", "Invalid data!")
