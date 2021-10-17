@@ -1,7 +1,8 @@
 [package]
 name = "sayhisam1/ropost"
-version = "1.0.0"
+version = "1.0.1"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
+description = "Simple networking abstraction for Roblox. Based on postal.js"
 
 [dependencies]
