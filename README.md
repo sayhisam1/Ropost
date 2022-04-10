@@ -9,7 +9,7 @@ See postal.js for reference (https://github.com/postaljs/postal.js)
 Or see the source code for documented api
 
 The core API is very simple:
-
+```lua
     -- subscribes to a specific channel and topic
     -- call disconnector() to unsubscribe from the channel and topic
     local disconnector = Ropost.subscribe({
@@ -30,9 +30,9 @@ The core API is very simple:
             qux = 1337
         }
     })
-
+```
 For ease of use, the API also includes a "channel" object that removes the need to specify a channel:
-
+```lua
     local channel = Ropost.channel("foo")
     channel:publish("bar", {
         baz = "something",
@@ -45,3 +45,4 @@ For ease of use, the API also includes a "channel" object that removes the need 
 
     -- unsubscribes all subscribed callbacks
     channel:destroy()
+```
