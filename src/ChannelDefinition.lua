@@ -11,11 +11,12 @@ function ChannelDefinition.new(channel)
 	return self
 end
 
-function ChannelDefinition:publish(topic, data)
+function ChannelDefinition:publish(topic, data, players)
 	return RopostMethods.publish({
 		channel = self.channel,
 		topic = topic,
 		data = data,
+		players = players,
 	})
 end
 

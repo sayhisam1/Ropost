@@ -59,9 +59,11 @@ function RopostMethods.publish(kwargs)
 
 	local envelope = createEnvelope(channel, topic, data)
 	if RunService:IsServer() then
-		local player = kwargs.player
-		if player then
-			remoteEvent:FireClient(player, envelope)
+		local players = kwargs.players
+		if players then
+			for _, player in pairs(players) do
+				remoteEvent:FireClient(player, envelope)
+			end
 		else
 			remoteEvent:FireAllClients(envelope)
 		end
